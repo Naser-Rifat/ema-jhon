@@ -3,7 +3,7 @@ import Cart from '../Cart/Cart';
 import Product from '../Product/Product';
 import { addToDb, getStoredCart } from '../../utilities/fakedb';
 import './Shop.css';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 const Shop = () => {
     const [products, setProducts] = useState([]);
@@ -12,7 +12,7 @@ const Shop = () => {
     const [displayProducts, setDisplayProducts] = useState([]);
 
     useEffect(() => {
-        fetch('./products.JSON')
+        fetch('./products.json')
             .then(res => res.json())
             .then(data => {
                 setProducts(data);
@@ -67,7 +67,7 @@ const Shop = () => {
     }
 
     return (
-        <>
+        <div>
             <div className="search-container">
                 <input
                     type="text"
@@ -87,13 +87,13 @@ const Shop = () => {
                 </div>
                 <div className="cart-container">
                     <Cart cart={cart}>
-                        <Link to="/orders ">
+                        <NavLink to="/orders">
                             <button className="btn-regular">Review Your Order</button>
-                        </Link>
+                        </NavLink>
                     </Cart>
                 </div>
             </div>
-        </>
+        </div>
     );
 };
 

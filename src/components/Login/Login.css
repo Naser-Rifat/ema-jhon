@@ -1,0 +1,14 @@
+.login-form {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.input {
+  padding: 5px;
+}
+.btn-center {
+  display: flex;
+  align-items: center;
+}
